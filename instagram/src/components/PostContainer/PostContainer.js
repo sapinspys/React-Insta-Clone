@@ -12,9 +12,8 @@ function PostContainer(props) {
             <div className="post-buttons">
                 {/* BUTTONS HERE */}
             </div>
-            {props.post.comments.map((comment, index) => (
-            <CommentSection key={index} comment={comment} />
-          ))};
+            {/* {props.post.comments.map((comment, index) => (
+            <CommentSection key={index} comment={comment} /> */}
         </div>
     )
 }
