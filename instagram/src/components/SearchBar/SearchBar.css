@@ -23,6 +23,11 @@
 .ig-icon {
     padding-top: 2px;
 }
+
 .search-container input {
     text-align: center;
+}
+
+.search-icons img {
+    margin-left: 25px;
 }

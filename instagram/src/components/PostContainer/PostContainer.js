@@ -2,6 +2,8 @@ import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.css';
 import moment from 'moment';
+import heart from '../../img/heart-ig.svg';
+import comment from '../../img/comment-icon.png';
 
 function PostContainer(props) {
     return (
@@ -13,8 +15,8 @@ function PostContainer(props) {
             <img src={props.post.imageUrl} alt="post-image" />
             <div className="comment-section">
                 <div className="post-buttons">
-                    <img src="../../img/heart-ig.svg" alt="heart"/>
-                    <img src="../../img/comment-icon.png" alt="comment"/>
+                    <img src={heart} alt="heart" height='25'/>
+                    <img src={comment} alt="comment" height='25'/>
                 </div>
                 <p className="post-likes"><strong>{props.post.likes} likes</strong></p>
                 {props.post.comments.map((comment, index) => (
