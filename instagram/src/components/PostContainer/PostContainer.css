@@ -1,0 +1,14 @@
+.post-container {
+    margin-top: 10px;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-user img {
+    border-radius: 50px;
+    margin-right: 10px;
+}
