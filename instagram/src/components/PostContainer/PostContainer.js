@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
-import './PostContainer.css'
+import './PostContainer.css';
+import moment from 'moment';
 
 function PostContainer(props) {
     return (
@@ -19,7 +20,7 @@ function PostContainer(props) {
                 {props.post.comments.map((comment, index) => (
                     <CommentSection key={index} comment={comment} />
                 ))}
-                <p className="post-timestamp">{props.post.timestamp}</p>
+                <p className="post-timestamp">{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</p>
                 <form className="post-add-comment" data-index={props.index} onSubmit={props.onSubmit}>
                     <input type='text' value={props.text} onChange={props.onChange} placeholder='Add a comment...'/>
                     <img src="../../img/more-icon.png" alt="more"/>
