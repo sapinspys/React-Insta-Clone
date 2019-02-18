@@ -1,5 +1,5 @@
 .post-container {
-    margin-top: 10px;
+    margin: 20px 0;
 }
 
 .post-user {
@@ -11,4 +11,28 @@
 .post-user img {
     border-radius: 50px;
     margin-right: 10px;
+}
+
+.comment-section {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.post-timestamp {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    color: gray;
+    font-size: 0.9rem;
+}
+
+.post-add-comment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-add-comment input{
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
 }

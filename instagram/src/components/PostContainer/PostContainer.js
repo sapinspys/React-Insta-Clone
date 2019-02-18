@@ -10,16 +10,21 @@ function PostContainer(props) {
                 <p><strong>{props.post.username}</strong></p>
             </div>
             <img src={props.post.imageUrl} alt="post-image" />
-            <div className="post-buttons">
-                <img src="../../img/heart-icon.png" alt="heart"/>
-                <img src="../../img/comment-icon.png" alt="comment"/>
+            <div className="comment-section">
+                <div className="post-buttons">
+                    <img src="../../img/heart-icon.png" alt="heart"/>
+                    <img src="../../img/comment-icon.png" alt="comment"/>
+                </div>
+                <p className="post-likes"><strong>{props.post.likes} likes</strong></p>
+                {props.post.comments.map((comment, index) => (
+                    <CommentSection key={index} comment={comment} />
+                ))}
+                <p className="post-timestamp">{props.post.timestamp}</p>
+                <div className="post-add-comment">
+                    <input type='text' placeholder='Add a comment...'/>
+                    <img src="../../img/more-icon.png" alt="more"/>
+                </div>
             </div>
-            <p className="post-likes">{props.post.likes} likes</p>
-            {props.post.comments.map((comment, index) => (
-                <CommentSection key={index} comment={comment} />
-            ))}
-            <p className="post-timestamp">{props.post.timestamp}</p>
-            <p className="post-add-comment">Add a comment...</p>
         </div>
     )
 }
