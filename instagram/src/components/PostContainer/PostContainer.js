@@ -20,10 +20,10 @@ function PostContainer(props) {
                     <CommentSection key={index} comment={comment} />
                 ))}
                 <p className="post-timestamp">{props.post.timestamp}</p>
-                <div className="post-add-comment">
-                    <input type='text' placeholder='Add a comment...'/>
+                <form className="post-add-comment" data-index={props.index} onSubmit={props.onSubmit}>
+                    <input type='text' value={props.text} onChange={props.onChange} placeholder='Add a comment...'/>
                     <img src="../../img/more-icon.png" alt="more"/>
-                </div>
+                </form>
             </div>
         </div>
     )
