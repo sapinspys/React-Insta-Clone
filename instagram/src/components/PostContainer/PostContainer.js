@@ -4,6 +4,7 @@ import './PostContainer.css';
 import moment from 'moment';
 import heart from '../../img/heart-ig.svg';
 import comment from '../../img/comment-icon.png';
+import more from '../../img/more-icon.png';
 
 function PostContainer(props) {
     return (
@@ -25,7 +26,7 @@ function PostContainer(props) {
                 <p className="post-timestamp">{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</p>
                 <form className="post-add-comment" data-index={props.index} onSubmit={props.onSubmit}>
                     <input type='text' value={props.text} onChange={props.onChange} placeholder='Add a comment...'/>
-                    <img src="../../img/more-icon.png" alt="more"/>
+                    <img src={more} alt="more" height='25'/>
                 </form>
             </div>
         </div>

@@ -20,6 +20,10 @@
     margin-top: 10px;
 }
 
+.post-buttons img {
+    margin-right: 15px;
+}
+
 .post-likes {
     margin: 0;
     margin-top: 8px;
