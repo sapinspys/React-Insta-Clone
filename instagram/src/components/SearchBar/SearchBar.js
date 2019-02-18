@@ -1,16 +1,18 @@
 import React from 'react';
+import './SearchBar.css';
 
 function SearchBar() {
     return (
         <div className="search-container">
             <div className="search-logo">
-            test
+                <img src="img/ig-icon.png" alt="ig-icon" />
+                Instagram
             </div>
-            <div className="search-bar">
-            test
-            </div>
+            <input type="text" placeholder='Search'/>
             <div className="search-icons">
-            test
+                <img src="img/compass-icon.png" alt="compass"/>
+                <img src="img/heart-icon.png" alt="heart"/>
+                <img src="img/person-icon.png" alt="person"/>
             </div>
         </div>
     )
