@@ -12,8 +12,11 @@ function PostContainer(props) {
             <div className="post-buttons">
                 {/* BUTTONS HERE */}
             </div>
+            <p className="post-likes">{props.post.likes} likes</p>
             {/* {props.post.comments.map((comment, index) => (
             <CommentSection key={index} comment={comment} /> */}
+            <p className="post-timestamp">{props.post.timestamp}</p>
+            <p className="post-add-comment">Add a comment...</p>
         </div>
     )
 }
