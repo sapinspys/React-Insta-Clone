@@ -18,10 +18,16 @@
     margin-top: 10px;
 }
 
+.post-likes {
+    margin: 0;
+    margin-top: 8px;
+}
+
 .post-timestamp {
     border-bottom: 1px solid lightgray;
     padding-bottom: 10px;
     margin-bottom: 25px;
+    margin-top: 0;
     color: gray;
     font-size: 0.9rem;
 }
