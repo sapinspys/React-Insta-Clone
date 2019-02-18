@@ -1,12 +1,28 @@
 .search-container {
     display: flex;
-    border: 1px solid black;
-    width: 100%;
+    width: 80%;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 70px;
+    margin: 0 10px;
 }
 
+.search-logo {
+    display: flex;
+    justify-content: space-between;
+    align-content: baseline;
+    width: 137px;
+}
+
+.ig-logo {
+    border-left: 1px solid lightgray;
+    padding-top: 5px;
+    padding-left: 12px;
+}
+
+.ig-icon {
+    padding-top: 2px;
+}
 .search-container input {
     text-align: center;
 }

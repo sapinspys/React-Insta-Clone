@@ -1,12 +1,14 @@
 import React from 'react';
 import './SearchBar.css';
+import IGLogo from '../../img/ig-icon.png';
+import IGNameLogo from '../../img/ig-name-logo.png';
 
 function SearchBar() {
     return (
         <div className="search-container">
             <div className="search-logo">
-                <img src="../../img/camera-ig.svg" alt="ig-icon"/>
-                <img src="../../img/ig-name-logo.png" alt="ig-logo"/>
+                <img src={IGLogo} alt="ig-icon" className="ig-icon" height='25'/>
+                <img src={IGNameLogo} alt="ig-logo" className="ig-logo" height='25'/>
             </div>
             <input type="text" placeholder='Search'/>
             <div className="search-icons">
