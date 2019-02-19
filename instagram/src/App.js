@@ -57,20 +57,25 @@ class App extends Component {
 
   filterBySearch = e => {
     e.preventDefault();
-    const newData = [...this.state.dummyData];
-    const filteredData = [];
-    for (let obj of newData) {
-      if (obj.username === this.state.searchText) {
-        filteredData.push(obj);
-      }
+    let postContainers = document.querySelectorAll('.post-container');
+    let usernameContainer = []
+    for (let post of this.state.dummyData) {
+      usernameContainer.push(post.username);
     }
 
-    this.setState(() => {
-      return ({
-        dummyData: filteredData,
-        searchText: '',
-      })
-    })
+    if (this.state.searchText === '' || usernameContainer.includes(this.state.searchText) === false) {
+      for (let post of postContainers) {
+        post.style.display = 'block';
+      } 
+    } else {
+      for (let post of this.state.dummyData) {
+        if (this.state.searchText !== post.username) {
+          postContainers[this.state.dummyData.indexOf(post)].style.display='none'
+        } else {
+          postContainers[this.state.dummyData.indexOf(post)].style.display='block'
+        }
+      }
+    }
   }
 
   handleLikes = e => {
