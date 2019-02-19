@@ -34,4 +34,14 @@ function PostContainer(props) {
     )
 }
 
+PostContainer.propTypes = {
+    post: PropTypes.shape({
+        username: PropTypes.string,
+        thumbnailUrl: PropTypes.string,
+        likes: PropTypes.number,
+        timestamp: PropTypes.string,
+        comments: PropTypes.array,
+    })
+};
+
 export default PostContainer;
