@@ -11,7 +11,7 @@ function SearchBar() {
         <div className="search-container">
             <div className="search-logo">
                 <img src={igLogo} alt="ig-icon" className="ig-icon" height='25'/>
-                <img src={igNameLogo} alt="ig-logo" className="ig-logo" height='25'/>
+                <img src={igNameLogo} alt="ig-logo" className="ig-logo" height='30'/>
             </div>
             <input type="text" placeholder='&#x26B2; Search'/>
             <div className="search-icons">
