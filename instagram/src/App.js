@@ -52,13 +52,10 @@ class App extends Component {
   handleLikes = e => {
     let index = e.target.parentNode.parentNode.querySelector('form').getAttribute('data-index');
     const newData = [...this.state.dummyData];
-    newData[index].comments.push({username:'testuser',text:`${this.state.text}`});
+    newData[index].likes += 1;
 
     this.setState(() => {
-      return ({
-        dummyData: newData,
-        text: ''
-      })
+      return ({dummyData: newData})
     })
   }
 

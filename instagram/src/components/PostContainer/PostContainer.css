@@ -30,6 +30,10 @@
     margin-right: 15px;
 }
 
+.post-buttons:hover {
+    cursor: pointer;
+}
+
 .post-likes {
     margin: 0;
     margin-top: 8px;
