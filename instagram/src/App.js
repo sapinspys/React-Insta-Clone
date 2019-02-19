@@ -10,8 +10,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData,
-      text: ''
+      dummyData: [],
+      text: null
     }
   }
 
@@ -21,12 +21,13 @@ class App extends Component {
   //   text:''
   // }
 
-  // componentDidMount() {
-  //   this.setState ({
-  //     dummyData: dummyData,
-  //     text:''
-  //   })
-  // }
+  componentDidMount() {
+    console.log('test')
+    this.setState ({
+      dummyData: dummyData,
+      text:''
+    })
+  }
 
   addNewComment = e => {
     e.preventDefault();
@@ -45,6 +46,10 @@ class App extends Component {
     this.setState({
       text: e.target.value
     })
+  }
+
+  handleLikes = e => {
+    console.log(e.target.parentNode.parentNode.querySelector('form').getAttribute('data-index'));
   }
 
   render() {
