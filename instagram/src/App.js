@@ -28,7 +28,7 @@ class App extends Component {
   //   })
   // }
 
-  handleSubmit = e => {
+  addNewComment = e => {
     e.preventDefault();
     const newData = [...this.state.dummyData];
     newData[e.target.getAttribute('data-index')].comments.push({username:'testuser',text:`${this.state.text}`});
@@ -55,7 +55,7 @@ class App extends Component {
           {this.state.dummyData.map((post, index) => (
             <PostContainer key={index} 
               post={post} 
-              onSubmit={this.handleSubmit}
+              onSubmit={this.addNewComment}
               onChange={this.handleChange}
               index={index}
               text={this.state.text} />
