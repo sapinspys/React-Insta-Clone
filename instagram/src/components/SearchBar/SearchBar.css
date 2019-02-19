@@ -36,6 +36,11 @@
     padding: 5px 20px;
 }
 
+/* REMOVES BLUE BORDER ON INPUTS! */
+input:focus { 
+    outline-width: 0;
+}
+
 ::placeholder {
     color: 	#A9A9A9;
 }
