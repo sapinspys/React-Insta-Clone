@@ -10,7 +10,7 @@ function PostContainer(props) {
     return (
         <div className="post-container">
             <div className="post-user">
-                <img src={props.post.thumbnailUrl} alt="thumbnail" width='40' height='40'/>
+                <img src={props.post.thumbnailUrl} alt="thumbnail" width='35' height='35'/>
                 <p><strong>{props.post.username}</strong></p>
             </div>
             <img src={props.post.imageUrl} className='post-image' alt="post-image" />
