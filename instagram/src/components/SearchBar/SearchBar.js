@@ -14,7 +14,7 @@ function SearchBar(props) {
                 <img src={igNameLogo} alt="ig-logo" className="ig-logo" height='30'/>
             </div>
             <form onSubmit={props.searchSubmit}>
-                <input type="text" onChange={props.searchChange} placeholder='&#x26B2; Search'/>
+                <input type="text" value={props.text} onChange={props.searchChange} placeholder='&#x26B2; Search'/>
             </form>
             <div className="search-icons">
                 <img src={compass} alt="compass" height='30'/>

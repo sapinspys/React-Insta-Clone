@@ -11,7 +11,9 @@ class App extends Component {
     super();
     this.state = {
       dummyData: [],
-      text: null
+      dataBackup: [],
+      commentText:'',
+      searchText: ''
     }
   }
 
@@ -22,10 +24,14 @@ class App extends Component {
   // }
 
   componentDidMount() {
-    console.log('test')
     this.setState ({
-      dummyData: dummyData,
-      text:''
+      dummyData: dummyData
+    })
+  }
+
+  handleCommentChange = e => {
+    this.setState({
+      commentText: e.target.value
     })
   }
 
@@ -33,19 +39,37 @@ class App extends Component {
     e.preventDefault();
     let index = e.target.getAttribute('data-index');
     const newData = [...this.state.dummyData];
-    newData[index].comments.push({username:'testuser',text:`${this.state.text}`});
+    newData[index].comments.push({username:'testuser',text:`${this.state.commentText}`});
 
     this.setState(() => {
       return ({
         dummyData: newData,
-        text: ''
+        commentText: '',
       })
     })
   }
 
-  handleChange = e => {
+  handleSearchChange = e => {
     this.setState({
-      text: e.target.value
+      searchText: e.target.value
+    })
+  }
+
+  filterBySearch = e => {
+    e.preventDefault();
+    const newData = [...this.state.dummyData];
+    const filteredData = [];
+    for (let obj of newData) {
+      if (obj.username === this.state.searchText) {
+        filteredData.push(obj);
+      }
+    }
+
+    this.setState(() => {
+      return ({
+        dummyData: filteredData,
+        searchText: '',
+      })
     })
   }
 
@@ -59,23 +83,21 @@ class App extends Component {
     })
   }
 
-  filterBySearch = e => {
-    console.log(e.target)
-  }
-
   render() {
     return (
       <div className="App">
-        <SearchBar searchSubmit={this.filterBySearch} searchChange={this.handleChange} />
+        <SearchBar searchSubmit={this.filterBySearch}
+          searchChange={this.handleSearchChange}
+          text={this.state.searchText} />
         <header className="app-header">
           {this.state.dummyData.map((post, index) => (
             <PostContainer key={index} 
               post={post} 
               commentSubmit={this.addNewComment}
-              commentChange={this.handleChange}
+              commentChange={this.handleCommentChange}
               addLikes={this.handleLikes}
               index={index}
-              text={this.state.text} />
+              text={this.state.commentText} />
           ))}
         </header>
       </div>
