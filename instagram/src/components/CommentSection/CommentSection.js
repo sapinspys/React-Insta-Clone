@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './CommentSection.css';
-import PropTypes from 'prop-types';
+import Comment from './Comment'
+// import PropTypes from 'prop-types';
 
-function CommentSection(props) {
-    return (
-        <div className="comment-container">
-            <p className="comment"><strong>{props.comment.username}</strong> {props.comment.text}</p>
-        </div>
-    )
+
+class CommentSection extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: props.comments
+        }
+    }
+
+    render() {
+        return(
+            <div>
+                {this.state.comments.map((comment, index) => (
+                    <Comment key={index} comment={comment} />
+                ))}
+            </div>
+        )
+    }
 }
 
-CommentSection.propTypes = {
-    comment: PropTypes.shape({
-        username: PropTypes.string,
-        text: PropTypes.string
-    })
-}
+// CommentSection.propTypes = {
+//     comment: PropTypes.shape({
+//         username: PropTypes.string,
+//         text: PropTypes.string
+//     })
+// }
 
 export default CommentSection

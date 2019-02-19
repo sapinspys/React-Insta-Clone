@@ -6,13 +6,27 @@ import PostContainer from './components/PostContainer/PostContainer';
 import PropTypes from 'prop-types';
 
 class App extends Component {
+  // CONSTRUCTOR LIFECYCLE METHOD IS OPTIONAL, UNLESS YOU NEED TO USE A REF OR METHOD BINDING
   constructor() {
     super();
     this.state = {
-      dummyData, // Same as dummyData: dummyData
-      text:''
+      dummyData,
+      text: ''
     }
   }
+
+  // This approach is widely preferred apparently.
+  // state = {
+  //   dummyData,
+  //   text:''
+  // }
+
+  // componentDidMount() {
+  //   this.setState ({
+  //     dummyData: dummyData,
+  //     text:''
+  //   })
+  // }
 
   handleSubmit = e => {
     e.preventDefault();

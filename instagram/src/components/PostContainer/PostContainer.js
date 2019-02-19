@@ -21,9 +21,7 @@ function PostContainer(props) {
                     <img src={comment} alt="comment" height='30'/>
                 </div>
                 <p className="post-likes"><strong>{props.post.likes} likes</strong></p>
-                {props.post.comments.map((comment, index) => (
-                    <CommentSection key={index} comment={comment} />
-                ))}
+                <CommentSection comments={props.post.comments} />
                 <p className="post-timestamp">{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</p>
                 <form className="post-add-comment" data-index={props.index} onSubmit={props.onSubmit}>
                     <input type='text' value={props.text} onChange={props.onChange} placeholder='Add a comment...'/>
