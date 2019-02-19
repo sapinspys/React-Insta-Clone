@@ -35,8 +35,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <SearchBar />
+        <SearchBar />
+        <header className="app-header">
           {this.state.dummyData.map((post, index) => (
             <PostContainer key={index} 
               post={post} 

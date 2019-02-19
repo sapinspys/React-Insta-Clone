@@ -1,10 +1,12 @@
 .search-container {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    margin: 0 10px;
+    position: fixed;
+    background: white;
+    border-bottom: 1px solid lightgray;
 }
 
 .search-logo {
@@ -12,10 +14,11 @@
     justify-content: space-between;
     align-content: baseline;
     width: 137px;
+    margin-left: 15px;
 }
 
 .ig-logo {
-    border-left: 1px solid lightgray;
+    border-left: 1px solid black;
     padding-top: 5px;
     padding-left: 12px;
 }
@@ -26,6 +29,10 @@
 
 .search-container input {
     text-align: center;
+}
+
+.search-icons {
+    margin-right: 15px;
 }
 
 .search-icons img {

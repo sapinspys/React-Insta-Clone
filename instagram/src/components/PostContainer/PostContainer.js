@@ -13,7 +13,7 @@ function PostContainer(props) {
                 <img src={props.post.thumbnailUrl} alt="thumbnail" width='40' height='40'/>
                 <p><strong>{props.post.username}</strong></p>
             </div>
-            <img src={props.post.imageUrl} alt="post-image" />
+            <img src={props.post.imageUrl} className='post-image' alt="post-image" />
             <div className="comment-section">
                 <div className="post-buttons">
                     <img src={heart} alt="heart" height='25'/>
