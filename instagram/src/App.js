@@ -31,8 +31,9 @@ class App extends Component {
 
   addNewComment = e => {
     e.preventDefault();
+    let index = e.target.getAttribute('data-index');
     const newData = [...this.state.dummyData];
-    newData[e.target.getAttribute('data-index')].comments.push({username:'testuser',text:`${this.state.text}`});
+    newData[index].comments.push({username:'testuser',text:`${this.state.text}`});
 
     this.setState(() => {
       return ({
@@ -49,7 +50,16 @@ class App extends Component {
   }
 
   handleLikes = e => {
-    console.log(e.target.parentNode.parentNode.querySelector('form').getAttribute('data-index'));
+    let index = e.target.parentNode.parentNode.querySelector('form').getAttribute('data-index');
+    const newData = [...this.state.dummyData];
+    newData[index].comments.push({username:'testuser',text:`${this.state.text}`});
+
+    this.setState(() => {
+      return ({
+        dummyData: newData,
+        text: ''
+      })
+    })
   }
 
   render() {
