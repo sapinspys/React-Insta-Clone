@@ -3,7 +3,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 75px;
     position: fixed;
     background: white;
     border-bottom: 1px solid lightgray;
@@ -29,6 +29,14 @@
 
 .search-container input {
     text-align: center;
+    background: #F8F8F8;
+    border: 1px solid lightgray;
+    color: black;
+    padding: 5px 20px;
+}
+
+::placeholder {
+    color: 	#A9A9A9;
 }
 
 .search-icons {
