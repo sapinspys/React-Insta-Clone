@@ -55,8 +55,9 @@ class App extends Component {
           {this.state.dummyData.map((post, index) => (
             <PostContainer key={index} 
               post={post} 
-              onSubmit={this.addNewComment}
-              onChange={this.handleChange}
+              commentSubmit={this.addNewComment}
+              commentChange={this.handleChange}
+              addLikes={this.handleLikes}
               index={index}
               text={this.state.text} />
           ))}
