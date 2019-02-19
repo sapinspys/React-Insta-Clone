@@ -59,10 +59,14 @@ class App extends Component {
     })
   }
 
+  filterBySearch = e => {
+    console.log(e.target)
+  }
+
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar searchSubmit={this.filterBySearch} searchChange={this.handleChange} />
         <header className="app-header">
           {this.state.dummyData.map((post, index) => (
             <PostContainer key={index} 
