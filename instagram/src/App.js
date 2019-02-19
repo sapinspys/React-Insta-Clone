@@ -17,7 +17,7 @@ class App extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const newData = [...this.state.dummyData];
-    newData[e.target.getAttribute('data-index')].comments.push({username:'testuser23',text:`${this.state.text}`});
+    newData[e.target.getAttribute('data-index')].comments.push({username:'testuser',text:`${this.state.text}`});
 
     this.setState(() => {
       return ({
