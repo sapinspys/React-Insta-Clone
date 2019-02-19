@@ -5,6 +5,7 @@ import moment from 'moment';
 import heart from '../../img/heart-icon.png';
 import comment from '../../img/comment-icon.png';
 import more from '../../img/more-icon.png';
+import PropTypes from 'prop-types';
 
 function PostContainer(props) {
     return (
