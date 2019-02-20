@@ -11,22 +11,40 @@ class App extends Component {
     super();
     this.state = {
       dummyData: [],
-      dataBackup: [],
       commentText:'',
       searchText: ''
     }
   }
 
-  // This approach is widely preferred apparently.
+  // This approach is widely preferred apparently
   // state = {
   //   dummyData,
   //   text:''
   // }
 
   componentDidMount() {
-    this.setState ({
-      dummyData: dummyData
-    })
+    this.setState({dummyData})
+    this.hydrateStateWithLocalStorage()
+  }
+
+  // https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2
+  hydrateStateWithLocalStorage() {
+    for (let key in this.state) {
+      // if the state key exists in localStorage
+      if (localStorage.hasOwnProperty(key)) {
+        // get the key's value from localStorage
+        let value = localStorage.getItem(key);
+
+        // parse the localStorage string and setState
+        try {
+          value = JSON.parse(value);
+          this.setState({ [key]: value });
+        } catch (e) {
+          // handle empty string
+          this.setState({ [key]: value });
+        }
+      }
+    }
   }
 
   handleCommentChange = e => {
@@ -40,13 +58,17 @@ class App extends Component {
     let index = e.target.getAttribute('data-index');
     const newData = [...this.state.dummyData];
     newData[index].comments.push({username:'testuser',text:`${this.state.commentText}`});
+    console.log(newData);
 
     this.setState(() => {
       return ({
         dummyData: newData,
-        commentText: '',
+        commentText: ''
       })
     })
+
+    localStorage.setItem("dummyData", JSON.stringify(newData));
+    localStorage.setItem("commentText", "");
   }
 
   handleSearchChange = e => {
@@ -86,6 +108,8 @@ class App extends Component {
     this.setState(() => {
       return ({dummyData: newData})
     })
+
+    localStorage.setItem("dummyData", JSON.stringify(newData));
   }
 
   render() {
