@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const authenticate = App => class extends Component {
+const authenticate = App => LoginPage => class extends Component {
     render() {
         return <App />
     }
