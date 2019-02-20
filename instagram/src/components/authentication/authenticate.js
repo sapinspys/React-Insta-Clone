@@ -17,7 +17,11 @@ const authenticate = App => LoginPage => class extends Component {
     }
 
     render() {
-        return <App />
+        if (this.state.loggedIn) {
+            return <App />
+        } else {
+            return <LoginPage />
+        }
     }
 }
 
