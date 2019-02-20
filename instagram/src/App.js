@@ -58,7 +58,6 @@ class App extends Component {
     let index = e.target.getAttribute('data-index');
     const newData = [...this.state.dummyData];
     newData[index].comments.push({username:'testuser',text:`${this.state.commentText}`});
-    console.log(newData);
 
     this.setState(() => {
       return ({
