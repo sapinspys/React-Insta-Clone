@@ -57,7 +57,7 @@ class PostsPage extends Component {
     e.preventDefault();
     let index = e.target.getAttribute('data-index');
     const newData = [...this.state.dummyData];
-    newData[index].comments.push({username:'testuser',text:`${this.state.commentText}`});
+    newData[index].comments.push({username:localStorage.getItem('user'),text:`${this.state.commentText}`});
 
     this.setState(() => {
       return ({
