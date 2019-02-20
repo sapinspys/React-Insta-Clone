@@ -9,7 +9,7 @@ const authenticate = App => LoginPage => class extends Component {
     }
 
     componentDidMount() {
-        if (localStorage.getItem('user') === false) {
+        if (!localStorage.getItem('user')) {
             this.setState({ loggedIn: false })
         } else {
             this.setState({ loggedIn: true })
@@ -17,11 +17,8 @@ const authenticate = App => LoginPage => class extends Component {
     }
 
     render() {
-        if (this.state.loggedIn) {
-            return <App />
-        } else {
-            return <LoginPage />
-        }
+        if (this.state.loggedIn) return <App />;
+        return <LoginPage />;
     }
 }
 
