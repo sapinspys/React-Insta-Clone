@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import PostsPage from './components/PostContainer/PostsPage'
+import PostsPage from './components/PostContainer/PostsPage';
+import authenticate from './authentication/authenticate'
 
 class App extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     dummyData: [],
-  //     commentText:'',
-  //     searchText: ''
-  //   }
-  // }
+  constructor() {
+    super();
+    this.state = {}
+  }
 
   render() {
     return (
@@ -21,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default authenticate(App);
