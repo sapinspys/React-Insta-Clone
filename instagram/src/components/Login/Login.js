@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import './Login.css';
-import { Button, Form, FormText} from 'reactstrap';
+import { Button, Form, FormText } from 'reactstrap';
 import styled from 'styled-components';
 import phones from '../../img/ig-login-phones.png';
 import iglogo from '../../img/ig-name-logo.png';
