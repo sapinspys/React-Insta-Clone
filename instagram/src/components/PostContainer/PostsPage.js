@@ -84,9 +84,13 @@ class PostsPage extends Component {
       usernameContainer.push(post.username);
     }
 
-    if (this.state.searchText === '' || usernameContainer.includes(this.state.searchText) === false) {
+    if (this.state.searchText === '') {
       for (let post of postContainers) {
         post.style.display = 'block';
+      } 
+    } else if (usernameContainer.includes(this.state.searchText) === false) {
+      for (let post of postContainers) {
+        post.style.display = 'none';
       } 
     } else {
       for (let post of this.state.dummyData) {

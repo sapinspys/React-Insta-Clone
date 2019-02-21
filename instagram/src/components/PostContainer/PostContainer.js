@@ -10,7 +10,7 @@ import Username from '../../styles/reusables'
 
 function PostContainer(props) {
     return (
-        <PostCard>
+        <PostCard className='post-container'>
             <UserContainer>
                 <UserThumbnail src={props.post.thumbnailUrl} 
                     alt="thumbnail" 
