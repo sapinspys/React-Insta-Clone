@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const Username = styled.p`
-    font-weight: 500;
-    color: ${props => props.bold ? 'black' : '#505050'}
+    font-weight: ${props => props.bold ? '700' : '500'};
     margin: 0;
     font-size: 0.9rem;
 `;

@@ -5,3 +5,7 @@
   padding-top: 70px;
   background: #F8F8F8;
 }
+
+textarea:focus, input:focus{
+  outline: none;
+}

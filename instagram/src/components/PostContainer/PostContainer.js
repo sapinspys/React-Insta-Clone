@@ -29,13 +29,16 @@ function PostContainer(props) {
                         alt="comment" 
                         height='30'/>
                 </div>
-                <p className="post-likes">{props.post.likes} likes</p>
+                <Likes>{props.post.likes} likes</Likes>
                 <CommentSection comments={props.post.comments} />
-                <p className="post-timestamp">{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</p>
-                <form className="post-add-comment" data-index={props.index} onSubmit={props.commentSubmit}>
-                    <input type='text' value={props.text} onChange={props.commentChange} placeholder='Add a comment...'/>
-                    <img src={more} alt="more" height='25'/>
-                </form>
+                <Timestamp>{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</Timestamp>
+                <CommentForm data-index={props.index} onSubmit={props.commentSubmit}>
+                    <CommentInput type='text' 
+                        value={props.text} 
+                        onChange={props.commentChange} 
+                        placeholder='Add a comment...'/>
+                    <img src={more} alt="more" height='20'/>
+                </CommentForm>
             </CommentsContainer>
         </PostCard>
     )
@@ -72,6 +75,35 @@ const CommentsContainer = styled.div`
 
 const CommentsButton = styled.img`
     margin-right: 15px;
+`;
+
+const Likes = styled.p`
+    margin: 0;
+    margin-top: 8px;
+    font-weight: 500;
+`;
+
+const Timestamp = styled.p`
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: gray;
+    font-size: 0.8rem;
+`;
+
+const CommentForm = styled.form`
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-top: 5px;
+`;
+
+const CommentInput = styled.input`
+    border: 0px solid;
+    font-size: 0.9rem;
+    font-weight: 300;
+    width: 100%;
 `;
 
 PostContainer.propTypes = {
