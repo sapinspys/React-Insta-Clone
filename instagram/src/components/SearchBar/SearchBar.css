@@ -1,4 +1,4 @@
-.search-container {
+/* .search-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -34,15 +34,15 @@
     border: 1px solid #E0E0E0;
     color: black;
     padding: 5px 20px;
-}
+} */
 
 /* REMOVES BLUE BORDER ON INPUTS! */
-input:focus { 
+/* input:focus { 
     outline-width: 0;
 }
 
 ::placeholder {
-    color:	#A0A0A0;
+    color:#B8B8B8;
 }
 
 .search-icons {
@@ -51,4 +51,4 @@ input:focus {
 
 .search-icons img {
     margin-left: 25px;
-}
+} */
