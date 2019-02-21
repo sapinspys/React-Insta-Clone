@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './CommentSection.css';
 import Comment from './Comment'
 // import PropTypes from 'prop-types';
 
