@@ -10,24 +10,22 @@ import Username from '../../styles/reusables'
 
 function PostContainer(props) {
     return (
-        <PostCard className="post-container">
-            <UserContainer className="post-user">
+        <PostCard>
+            <UserContainer>
                 <UserThumbnail src={props.post.thumbnailUrl} 
                     alt="thumbnail" 
                     width='35' 
                     height='35'/>
                 <Username bold>{props.post.username}</Username>
             </UserContainer>
-            <img src={props.post.imageUrl} 
-                className='post-image' 
-                alt="post" />
-            <div className="comment-section">
-                <div className="post-buttons">
-                    <img src={heart} 
+            <PostImage src={props.post.imageUrl} alt="post" />
+            <CommentsContainer>
+                <div>
+                    <CommentsButton src={heart} 
                         alt="heart" 
                         height='30' 
                         onClick={props.addLikes} />
-                    <img src={comment} 
+                    <CommentsButton src={comment} 
                         alt="comment" 
                         height='30'/>
                 </div>
@@ -38,7 +36,7 @@ function PostContainer(props) {
                     <input type='text' value={props.text} onChange={props.commentChange} placeholder='Add a comment...'/>
                     <img src={more} alt="more" height='25'/>
                 </form>
-            </div>
+            </CommentsContainer>
         </PostCard>
     )
 }
@@ -58,6 +56,22 @@ const UserContainer = styled.div`
 const UserThumbnail = styled.img`
     border-radius: 40px;
     margin-right: 10px;
+`;
+
+const PostImage = styled.img`
+    width: 600px;
+`;
+
+const CommentsContainer = styled.div`
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    width: 570px;
+    font-size: 0.9rem;
+`;
+
+const CommentsButton = styled.img`
+    margin-right: 15px;
 `;
 
 PostContainer.propTypes = {
