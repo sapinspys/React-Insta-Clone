@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Login.css';
-import { Button, Form, FormGroup, Input, FormText} from 'reactstrap';
+import { Button, Form, FormText} from 'reactstrap';
 import styled from 'styled-components';
 import phones from '../../img/ig-login-phones.png';
 import iglogo from '../../img/ig-name-logo.png';
@@ -31,33 +31,31 @@ class LoginPage extends Component {
         return (
         <Container>
             <PhonesImg></PhonesImg>
-            {/* <img src={phones} alt="phones"/> */}
             <LoginCard>
                 <Form onSubmit={this.handleLogin}>
                     <LogoImg></LogoImg>
-                    {/* <img src={igNameLogo} alt="ig-logo" height='55'/> */}
                     <CallToAction>
                         Sign up to see photos and videos from your friends.
                     </CallToAction>
-                    <FormGroup>
-                        <Input type="text"
+                    <FormInput type="text"
                         name='username' 
                         value={this.state.username} 
                         onChange={this.handleChange} 
-                        placeholder='username'/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="password" 
+                        placeholder='Username'/>
+                    <FormInput type="password" 
                         name='password' 
                         value={this.state.password} 
                         onChange={this.handleChange} 
-                        placeholder='password'/>
-                    </FormGroup>
-                    <Button className='login-btn'>
-                        Sign Up
-                    </Button>
-                    <FormText>
-                        By signing up, you agre to our <strong>Fake Terms</strong>, <strong>Fake Data Policy</strong>, and <strong>Fake Cookies Policy</strong>.
+                        placeholder='Password'/>
+                    <Button color='primary' 
+                        size='sm' 
+                        block 
+                        style={{margin: '15px 0'}}> Sign Up </Button>
+                    <FormText style={{width: '80%', 
+                        alignText: 'center', 
+                        margin: '0 auto',
+                        marginBottom: '15px'}}>
+                        By signing up, you agree to our <strong>Fake Terms</strong>, <strong>Fake Data Policy</strong>, and <strong>Fake Cookies Policy</strong>.
                     </FormText>
                 </Form>
             </LoginCard>
@@ -84,7 +82,7 @@ const Container = styled.div`
 `;
 
 const CallToAction = styled.p`
-    color: #989898;
+    color: #909090;
     font-weight: 500;
 `;
 
@@ -105,6 +103,15 @@ const LogoImg = styled.div`
     background-position: center;
     height: 55px;
     margin: 15px 0; 
+`;
+
+const FormInput = styled.input`
+    background: #F8F8F8;
+    border: 1px solid #E0E0E0;
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    width: 100%;
+    margin: 5px 0;
 `;
 
 export default LoginPage;
