@@ -4,6 +4,7 @@ import dummyData from '../../dummy-data';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import PostContainer from '../../components/PostContainer/PostContainer';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 class PostsPage extends Component {
   // CONSTRUCTOR LIFECYCLE METHOD IS OPTIONAL, UNLESS YOU NEED TO USE A REF OR METHOD BINDING
@@ -132,10 +133,16 @@ class PostsPage extends Component {
               text={this.state.commentText} />
           ))}
         </header>
+        <Footer> Designed by Guillermo Arria-Devoe </Footer>
       </div>
     );
   }
 }
+
+const Footer = styled.footer`
+  border: 1px solid black;
+  text-align: center;
+`;
 
 PostsPage.propTypes = {
   dummyData: PropTypes.arrayOf(PropTypes.object)
