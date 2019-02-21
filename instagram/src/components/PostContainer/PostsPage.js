@@ -5,6 +5,8 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import PostContainer from '../../components/PostContainer/PostContainer';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import github from '../../img/github-icon.png';
+import linkedin from '../../img/linkedin-icon.png';
 
 class PostsPage extends Component {
   // CONSTRUCTOR LIFECYCLE METHOD IS OPTIONAL, UNLESS YOU NEED TO USE A REF OR METHOD BINDING
@@ -132,16 +134,41 @@ class PostsPage extends Component {
               index={index}
               text={this.state.commentText} />
           ))}
+          <Footer>  
+            <Credits>Designed by Guillermo Arria-Devoe</Credits>
+            <IconContainer>
+              <a href="https://github.com/sapinspys" target="_blank"><SocialIcon src={github} /></a>
+              <a href="https://www.linkedin.com/in/guillermo-arria-devoe/" target="_blank"><SocialIcon src={linkedin} height='30' /></a>
+            </IconContainer>
+        </Footer>
         </header>
-        <Footer> Designed by Guillermo Arria-Devoe </Footer>
       </div>
     );
   }
 }
 
 const Footer = styled.footer`
-  border: 1px solid black;
-  text-align: center;
+  border-top: 1px solid #E0E0E0;
+  display: flex;
+  justify-content: center;
+  background: white;
+  margin-top: 50px;
+  width: 100%;
+  padding: 15px 0;
+`;
+
+const IconContainer = styled.div`
+
+`;
+
+const SocialIcon = styled.img`
+  margin-right: 10px;
+`;
+
+const Credits = styled.p`
+  font-size: 0.9rem;
+  margin: 5px 15px;
+  font-weight: 300;
 `;
 
 PostsPage.propTypes = {
