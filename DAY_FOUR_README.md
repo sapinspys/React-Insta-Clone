@@ -37,6 +37,8 @@
 
     - A state-driven view is important to software developers because it allows us to conceptualize components from the viewpoint of the state, instead of as separate components that function independently of one another. This view reduces cognitive load by reducing complexity and makes for easier testing through well-defined data paths. So a state-driven application is developed using State Driven Development (SDD) techniques, which lead the structure of the application to be carefully compartmentalised and visually understandable. This is powerful because now development teams involved in the process can more easily conceptualize data flow through the application, making it easier to scale the application, introduce new developers to the application, and showcase the application's structure. React enables these patterns through its Component Lifecycle methods and ability to set state within a specific component.
 
+DONE!
+
 #### Stretch Problems (Day III)
 
 - Add the functionality to select a single Post. If a user clicks on a post, only show that post.
