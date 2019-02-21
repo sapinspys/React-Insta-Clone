@@ -18,9 +18,9 @@ function SearchBar(props) {
                 placeholder='&#x26B2; Search'/>
             </form>
             <IconContainer className="search-icons">
-                <Icon src={compass} alt="compass" height='30'/>
-                <Icon src={heart} alt="heart" height='30'/>
-                <Icon src={person} alt="person" height='30'/>
+                <Icon src={compass} alt="compass" height='27'/>
+                <Icon src={heart} alt="heart" height='27'/>
+                <Icon src={person} alt="person" height='27'/>
             </IconContainer>
         </Header>
     )
