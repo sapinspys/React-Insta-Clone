@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Login.css';
+import { Button, Form, FormGroup, } from 'reactstrap';
 
 class LoginPage extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class LoginPage extends Component {
     render() {
         return (
         <div className="login-container">
-            <form onSubmit={this.handleLogin}>
+            <Form onSubmit={this.handleLogin}>
                 <input type="text"
                     name='username' 
                     value={this.state.username} 
@@ -39,7 +40,7 @@ class LoginPage extends Component {
                 <button className='login-btn'>
                     Login
                 </button>
-            </form>
+            </Form>
         </div>
         )
     }
