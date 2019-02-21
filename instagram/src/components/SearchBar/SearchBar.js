@@ -17,11 +17,11 @@ function SearchBar(props) {
                 onChange={props.searchChange} 
                 placeholder='&#x26B2; Search'/>
             </form>
-            <div className="search-icons">
-                <img src={compass} alt="compass" height='30'/>
-                <img src={heart} alt="heart" height='30'/>
-                <img src={person} alt="person" height='30'/>
-            </div>
+            <IconContainer className="search-icons">
+                <Icon src={compass} alt="compass" height='30'/>
+                <Icon src={heart} alt="heart" height='30'/>
+                <Icon src={person} alt="person" height='30'/>
+            </IconContainer>
         </Header>
     )
 }
@@ -44,11 +44,17 @@ const LogoHeader = styled.div`
 const FormInput = styled.input`
     background: #F8F8F8;
     border: 1px solid #E0E0E0;
-    font-size: 0.8rem;
     padding: 2px 35px;
     text-align: center;
     font-size: 0.9rem;
 `;
 
+const IconContainer = styled.div`
+    margin-right: 15px;
+`;
+
+const Icon = styled.img`
+    margin-left: 25px;
+`;
 
 export default SearchBar;
