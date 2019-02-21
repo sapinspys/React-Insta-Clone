@@ -9,10 +9,13 @@ function SearchBar(props) {
     return (
         <Header>
             <LogoHeader className="search-logo">
-                <LogoImage src={igLogo} alt="ig-logo"/>
+                <img src={igLogo} alt="ig-logo"/>
             </LogoHeader>
             <form onSubmit={props.searchSubmit}>
-                <input type="text" value={props.text} onChange={props.searchChange} placeholder='&#x26B2; Search'/>
+                <FormInput type="text" 
+                value={props.text} 
+                onChange={props.searchChange} 
+                placeholder='&#x26B2; Search'/>
             </form>
             <div className="search-icons">
                 <img src={compass} alt="compass" height='30'/>
@@ -35,14 +38,17 @@ const Header = styled.div`
 `;
 
 const LogoHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-content: baseline;
-    width: 137px;
     margin-left: 20px;
 `;
 
-const LogoImage = styled.img`
+const FormInput = styled.input`
+    background: #F8F8F8;
+    border: 1px solid #E0E0E0;
+    font-size: 0.8rem;
+    padding: 2px 35px;
+    text-align: center;
+    font-size: 0.9rem;
 `;
+
 
 export default SearchBar;
