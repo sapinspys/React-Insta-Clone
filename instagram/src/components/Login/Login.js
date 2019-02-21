@@ -90,7 +90,7 @@ const PhonesImg = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    height: 650px;
+    height: 540px;
     width: 380px;
     margin-right: 30px;
 `;
