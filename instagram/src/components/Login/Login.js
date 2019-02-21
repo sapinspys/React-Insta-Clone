@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Login.css';
-import { Button, Form, FormGroup, } from 'reactstrap';
+import { Button, Form, FormGroup, Input, FormText} from 'reactstrap';
 
 class LoginPage extends Component {
     constructor(props) {
@@ -27,19 +27,26 @@ class LoginPage extends Component {
         return (
         <div className="login-container">
             <Form onSubmit={this.handleLogin}>
-                <input type="text"
+                <FormGroup>
+                    <Input type="text"
                     name='username' 
                     value={this.state.username} 
                     onChange={this.handleChange} 
                     placeholder='username'/>
-                <input type="password" 
+                </FormGroup>
+                <FormGroup>
+                    <Input type="password" 
                     name='password' 
                     value={this.state.password} 
                     onChange={this.handleChange} 
                     placeholder='password'/>
-                <button className='login-btn'>
+                </FormGroup>
+                <Button className='login-btn'>
                     Login
-                </button>
+                </Button>
+                <FormText>
+                    By signing up, you agre to our <strong>Fake Terms</strong>, <strong>Fake Data Policy</strong>, and <strong>Fake Cookies Policy</strong>.
+                </FormText>
             </Form>
         </div>
         )
