@@ -8,9 +8,9 @@ import styled from 'styled-components';
 function SearchBar(props) {
     return (
         <Header>
-            <div className="search-logo">
-                <img src={igLogo} alt="ig-icon" className="ig-icon" height='30'/>
-            </div>
+            <LogoHeader className="search-logo">
+                <LogoImage src={igLogo} alt="ig-logo"/>
+            </LogoHeader>
             <form onSubmit={props.searchSubmit}>
                 <input type="text" value={props.text} onChange={props.searchChange} placeholder='&#x26B2; Search'/>
             </form>
@@ -40,6 +40,9 @@ const LogoHeader = styled.div`
     align-content: baseline;
     width: 137px;
     margin-left: 20px;
+`;
+
+const LogoImage = styled.img`
 `;
 
 export default SearchBar;
