@@ -10,13 +10,13 @@ import styled from 'styled-components';
 function PostContainer(props) {
     return (
         <PostCard className="post-container">
-            <div className="post-user">
-                <img src={props.post.thumbnailUrl} 
+            <UserContainer className="post-user">
+                <UserThumbnail src={props.post.thumbnailUrl} 
                     alt="thumbnail" 
                     width='35' 
                     height='35'/>
                 <p>{props.post.username}</p>
-            </div>
+            </UserContainer>
             <img src={props.post.imageUrl} 
                 className='post-image' 
                 alt="post" />
@@ -42,6 +42,23 @@ function PostContainer(props) {
     )
 }
 
+const PostCard = styled.div`
+    margin-top: 60px;
+    border: 1px solid #E0E0E0;
+    background: white;
+`;
+
+const UserContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin: 5px 12px;
+`;
+
+const UserThumbnail = styled.img`
+    border-radius: 40px;
+    margin-right: 10px;
+`;
+
 PostContainer.propTypes = {
     post: PropTypes.shape({
         username: PropTypes.string,
@@ -51,11 +68,5 @@ PostContainer.propTypes = {
         comments: PropTypes.array,
     })
 }
-
-const PostCard = styled.div`
-    margin-top: 60px;
-    border: 1px solid #E0E0E0;
-    background: white;
-`;
 
 export default PostContainer;
