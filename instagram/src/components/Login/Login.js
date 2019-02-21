@@ -92,7 +92,7 @@ const PhonesImg = styled.div`
     background-position: center;
     height: 650px;
     width: 380px;
-    margin-right: 15px;
+    margin-right: 30px;
 `;
 
 const LogoImg = styled.div`
