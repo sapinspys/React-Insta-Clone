@@ -6,6 +6,7 @@ import comment from '../../img/comment-icon.png';
 import more from '../../img/more-icon.png';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Username from '../../styles/reusables'
 
 function PostContainer(props) {
     return (
@@ -15,7 +16,7 @@ function PostContainer(props) {
                     alt="thumbnail" 
                     width='35' 
                     height='35'/>
-                <p>{props.post.username}</p>
+                <Username bold>{props.post.username}</Username>
             </UserContainer>
             <img src={props.post.imageUrl} 
                 className='post-image' 
@@ -51,7 +52,7 @@ const PostCard = styled.div`
 const UserContainer = styled.div`
     display: flex;
     align-items: center;
-    margin: 5px 12px;
+    margin: 15px 15px;
 `;
 
 const UserThumbnail = styled.img`
