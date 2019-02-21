@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import './Login.css';
 import { Button, Form, FormGroup, Input, FormText} from 'reactstrap';
+import styled from 'styled-components';
+
+const LoginCard = styled.div`
+    width: 348px;
+    margin: 0 auto;
+    
+`;
 
 class LoginPage extends Component {
     constructor(props) {
@@ -25,7 +32,7 @@ class LoginPage extends Component {
 
     render() {
         return (
-        <div className="login-container">
+        <LoginCard>
             <Form onSubmit={this.handleLogin}>
                 <FormGroup>
                     <Input type="text"
@@ -48,7 +55,7 @@ class LoginPage extends Component {
                     By signing up, you agre to our <strong>Fake Terms</strong>, <strong>Fake Data Policy</strong>, and <strong>Fake Cookies Policy</strong>.
                 </FormText>
             </Form>
-        </div>
+        </LoginCard>
         )
     }
 }
