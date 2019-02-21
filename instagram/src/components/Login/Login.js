@@ -3,12 +3,6 @@ import './Login.css';
 import { Button, Form, FormGroup, Input, FormText} from 'reactstrap';
 import styled from 'styled-components';
 
-const LoginCard = styled.div`
-    width: 348px;
-    margin: 0 auto;
-    
-`;
-
 class LoginPage extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +43,7 @@ class LoginPage extends Component {
                     placeholder='password'/>
                 </FormGroup>
                 <Button className='login-btn'>
-                    Login
+                    Sign Up
                 </Button>
                 <FormText>
                     By signing up, you agre to our <strong>Fake Terms</strong>, <strong>Fake Data Policy</strong>, and <strong>Fake Cookies Policy</strong>.
@@ -59,5 +53,13 @@ class LoginPage extends Component {
         )
     }
 }
+
+const LoginCard = styled.div`
+    width: 348px;
+    margin: 0 auto;
+    border: 1px solid #E0E0E0;
+    padding: 20px 40px;
+    text-align: center;
+`;
 
 export default LoginPage;
