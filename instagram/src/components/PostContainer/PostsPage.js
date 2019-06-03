@@ -8,6 +8,32 @@ import styled from 'styled-components';
 import github from '../../img/github-icon.png';
 import linkedin from '../../img/linkedin-icon.png';
 
+// Styled Components
+const Footer = styled.footer`
+  border-top: 1px solid #E0E0E0;
+  display: flex;
+  justify-content: center;
+  background: white;
+  margin-top: 50px;
+  width: 100%;
+  padding: 15px 0;
+  max-height: 100px;
+`;
+
+const IconContainer = styled.div`
+
+`;
+
+const SocialIcon = styled.img`
+  margin-right: 10px;
+`;
+
+const Credits = styled.p`
+  font-size: 0.9rem;
+  margin: 5px 15px;
+  font-weight: 300;
+`;
+
 class PostsPage extends Component {
   // CONSTRUCTOR LIFECYCLE METHOD IS OPTIONAL, UNLESS YOU NEED TO USE A REF OR METHOD BINDING
   constructor() {
@@ -146,30 +172,6 @@ class PostsPage extends Component {
     );
   }
 }
-
-const Footer = styled.footer`
-  border-top: 1px solid #E0E0E0;
-  display: flex;
-  justify-content: center;
-  background: white;
-  margin-top: 50px;
-  width: 100%;
-  padding: 15px 0;
-`;
-
-const IconContainer = styled.div`
-
-`;
-
-const SocialIcon = styled.img`
-  margin-right: 10px;
-`;
-
-const Credits = styled.p`
-  font-size: 0.9rem;
-  margin: 5px 15px;
-  font-weight: 300;
-`;
 
 PostsPage.propTypes = {
   dummyData: PropTypes.arrayOf(PropTypes.object)
