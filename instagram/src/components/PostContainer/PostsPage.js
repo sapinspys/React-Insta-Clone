@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import '../../App.css';
-import dummyData from '../../dummy-data';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import PostContainer from '../../components/PostContainer/PostContainer';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import github from '../../img/github-icon.png';
-import linkedin from '../../img/linkedin-icon.png';
+import React, { Component } from "react";
+import "../../App.css";
+import dummyData from "../../dummy-data";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import PostContainer from "../../components/PostContainer/PostContainer";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import github from "../../img/github-icon.png";
+import linkedin from "../../img/linkedin-icon.png";
 
 // Styled Components
 const Footer = styled.footer`
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid #e0e0e0;
   display: flex;
   justify-content: center;
   background: white;
@@ -20,9 +20,7 @@ const Footer = styled.footer`
   max-height: 100px;
 `;
 
-const IconContainer = styled.div`
-
-`;
+const IconContainer = styled.div``;
 
 const SocialIcon = styled.img`
   margin-right: 10px;
@@ -40,9 +38,9 @@ class PostsPage extends Component {
     super();
     this.state = {
       dummyData: [],
-      commentText:'',
-      searchText: ''
-    }
+      commentText: "",
+      searchText: ""
+    };
   }
 
   // This approach is widely preferred apparently
@@ -52,8 +50,8 @@ class PostsPage extends Component {
   // }
 
   componentDidMount() {
-    this.setState({dummyData})
-    this.hydrateStateWithLocalStorage()
+    this.setState({ dummyData });
+    this.hydrateStateWithLocalStorage();
   }
 
   // https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2
@@ -79,94 +77,117 @@ class PostsPage extends Component {
   handleCommentChange = e => {
     this.setState({
       commentText: e.target.value
-    })
-  }
+    });
+  };
 
   addNewComment = e => {
     e.preventDefault();
-    let index = e.target.getAttribute('data-index');
+    let index = e.target.getAttribute("data-index");
     const newData = [...this.state.dummyData];
-    newData[index].comments.push({username:localStorage.getItem('user'),text:`${this.state.commentText}`});
+    newData[index].comments.push({
+      username: localStorage.getItem("user"),
+      text: `${this.state.commentText}`
+    });
 
     this.setState(() => {
-      return ({
+      return {
         dummyData: newData,
-        commentText: ''
-      })
-    })
+        commentText: ""
+      };
+    });
 
     localStorage.setItem("dummyData", JSON.stringify(newData));
     localStorage.setItem("commentText", "");
-  }
+  };
 
   handleSearchChange = e => {
     this.setState({
       searchText: e.target.value
-    })
-  }
+    });
+  };
 
   filterBySearch = e => {
     e.preventDefault();
-    let postContainers = document.querySelectorAll('.post-container');
-    let usernameContainer = []
+    let postContainers = document.querySelectorAll(".post-container");
+    let usernameContainer = [];
     for (let post of this.state.dummyData) {
       usernameContainer.push(post.username);
     }
 
-    if (this.state.searchText === '') {
+    if (this.state.searchText === "") {
       for (let post of postContainers) {
-        post.style.display = 'block';
-      } 
+        post.style.display = "block";
+      }
     } else if (usernameContainer.includes(this.state.searchText) === false) {
       for (let post of postContainers) {
-        post.style.display = 'none';
-      } 
+        post.style.display = "none";
+      }
     } else {
       for (let post of this.state.dummyData) {
         if (this.state.searchText !== post.username) {
-          postContainers[this.state.dummyData.indexOf(post)].style.display='none'
+          postContainers[this.state.dummyData.indexOf(post)].style.display =
+            "none";
         } else {
-          postContainers[this.state.dummyData.indexOf(post)].style.display='block'
+          postContainers[this.state.dummyData.indexOf(post)].style.display =
+            "block";
         }
       }
     }
-  }
+  };
 
   handleLikes = e => {
-    let index = e.target.parentNode.parentNode.querySelector('form').getAttribute('data-index');
+    let index = e.target.parentNode.parentNode
+      .querySelector("form")
+      .getAttribute("data-index");
     const newData = [...this.state.dummyData];
     newData[index].likes += 1;
 
     this.setState(() => {
-      return ({dummyData: newData})
-    })
+      return { dummyData: newData };
+    });
 
     localStorage.setItem("dummyData", JSON.stringify(newData));
-  }
+  };
 
   render() {
     return (
       <div className="App">
-        <SearchBar searchSubmit={this.filterBySearch}
+        <SearchBar
+          searchSubmit={this.filterBySearch}
           searchChange={this.handleSearchChange}
-          text={this.state.searchText} />
+          text={this.state.searchText}
+        />
         <header className="app-header">
           {this.state.dummyData.map((post, index) => (
-            <PostContainer key={index} 
-              post={post} 
+            <PostContainer
+              key={index}
+              post={post}
               commentSubmit={this.addNewComment}
               commentChange={this.handleCommentChange}
               addLikes={this.handleLikes}
               index={index}
-              text={this.state.commentText} />
+              text={this.state.commentText}
+            />
           ))}
-          <Footer>  
+          <Footer>
             <Credits>Designed by Guillermo Arria-Devoe</Credits>
             <IconContainer>
-              <a href="https://github.com/sapinspys" target="_blank"><SocialIcon src={github} /></a>
-              <a href="https://www.linkedin.com/in/guillermo-arria-devoe/" target="_blank"><SocialIcon src={linkedin} height='30' /></a>
+              <a
+                href="https://github.com/sapinspys"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SocialIcon src={github} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/guillermo-arria-devoe/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SocialIcon src={linkedin} height="30" />
+              </a>
             </IconContainer>
-        </Footer>
+          </Footer>
         </header>
       </div>
     );
@@ -175,6 +196,6 @@ class PostsPage extends Component {
 
 PostsPage.propTypes = {
   dummyData: PropTypes.arrayOf(PropTypes.object)
-}
+};
 
 export default PostsPage;
