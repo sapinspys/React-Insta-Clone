@@ -17,8 +17,7 @@ const authenticate = App => LoginPage => class extends Component {
     }
 
     render() {
-        if (this.state.loggedIn) return <App />;
-        return <LoginPage />;
+        return (this.state.loggedIn) ? <App /> : <LoginPage />;
     }
 }
 
