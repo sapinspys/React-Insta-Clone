@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import PostsPage from './components/PostContainer/PostsPage';
-import authenticate from './components/authentication/authenticate'
+import withAuthenticate from './components/authentication/withAuthenticate'
 import LoginPage from './components/Login/Login';
 
 class App extends Component {
@@ -19,4 +19,4 @@ class App extends Component {
   }
 }
 
-export default authenticate(App)(LoginPage); //KNOWN AS CURRYING
+export default withAuthenticate(App)(LoginPage); //KNOWN AS CURRYING
